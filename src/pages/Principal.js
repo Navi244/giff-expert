@@ -14,8 +14,8 @@ const Principal = ()=> {
           <h2>Mostrar gifs con peticiones</h2>
           <hr />
           <p>Ingresa el nombre del giff que quieres buscar</p>
-          <GifGrid />
           <AddCategory categories={elements}/>
+          <GifGrid />
         </div>
       </div>
     </div>
