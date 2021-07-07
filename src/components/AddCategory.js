@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 
 
-const AddCategory = ({categories})=>{
-  const [inputValue, setInputValue] = useState(' ');
-  const [allcategories, setCategories] = useState(categories);
+const AddCategory = ({setCategory})=>{
+  const [inputValue, setInputValue] = useState('');
+  //const [allcategories, setCategories] = useState(categories);
 
-  const handleInputChange = (event)=>{
-    setInputValue(event.target.value)
+  const addElement = ()=>{
+    setCategory(inputValue)
   };
 
-  const addElement = () =>{
-    setCategories([...allcategories, inputValue]);
+  const handleInputChange = (e) =>{
+    setInputValue(e.target.value);
   }
 
   return (
@@ -18,7 +18,7 @@ const AddCategory = ({categories})=>{
       <input type="text" value={inputValue} onChange={handleInputChange}></input>
       <br />
       <button onClick={addElement}>Add element</button>
-      <ol>
+      {/* <ol>
           {
             allcategories.map(category =>{
               return(
@@ -28,7 +28,7 @@ const AddCategory = ({categories})=>{
               )
             })
           }
-      </ol>
+      </ol> */}
     </div>
   )
 };

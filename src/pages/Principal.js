@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import AddCategory from '../components/AddCategory';
 import GifGrid from '../components/GifGrid';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Principal = ()=> {
 
-  const elements = [];
+  const [categories, setCategory] = useState(['One punch']);
 
   return (
     <div className="container">
@@ -14,8 +14,8 @@ const Principal = ()=> {
           <h2>Mostrar gifs con peticiones</h2>
           <hr />
           <p>Ingresa el nombre del giff que quieres buscar</p>
-          <AddCategory categories={elements}/>
-          <GifGrid />
+          <AddCategory setCategory={setCategory}/>
+          <GifGrid nameGif={categories} />
         </div>
       </div>
     </div>
