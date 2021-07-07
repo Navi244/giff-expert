@@ -5,19 +5,25 @@ const AddCategory = ({setCategory})=>{
   const [inputValue, setInputValue] = useState('');
   //const [allcategories, setCategories] = useState(categories);
 
-  const addElement = ()=>{
-    setCategory(inputValue)
-  };
+  // const addElement = ()=>{
+    
+  // };
 
   const handleInputChange = (e) =>{
     setInputValue(e.target.value);
   }
 
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    setCategory(inputValue);
+    setInputValue('');
+  }
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input type="text" value={inputValue} onChange={handleInputChange}></input>
       <br />
-      <button onClick={addElement}>Add element</button>
+      {/* <button onClick={addElement}>Add element</button> */}
       {/* <ol>
           {
             allcategories.map(category =>{
@@ -29,7 +35,7 @@ const AddCategory = ({setCategory})=>{
             })
           }
       </ol> */}
-    </div>
+    </form>
   )
 };
 

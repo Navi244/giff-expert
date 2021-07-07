@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const Principal = ()=> {
 
-  const [categories, setCategory] = useState(['One punch']);
+  const [categories, setCategory] = useState(['Radiohead']);
 
   return (
     <div className="container">
